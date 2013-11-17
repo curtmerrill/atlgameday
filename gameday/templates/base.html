@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}ATL Gameday: Is there a game today?{% endblock %}</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="//use.typekit.net/fwi6scc.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLldCcAsjXZYJCsS8cE93yyEw_AXengc&sensor=false"></script>
+
+	{% block headerjs %}{% endblock %}
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
+</head>
+<body>
+	<div id="map-container"></div>
+    <div class="content-container">
+		{% block body %}{% endblock %}
+	</div>
+</body>
+{% block footerjs %}
+<script type="text/javascript">
+    var center = new google.maps.LatLng(33.755, -84.39);
+    if (window.innerWidth < 800) {
+        center = new google.maps.LatLng(33.74, -84.39);
+    } else {
+        center = new google.maps.LatLng(33.755, -84.36);
+    }
+        
+    var styleArray = [
+    {
+        "stylers": [
+            { "visibility": "simplified" },
+            { "saturation": -50 },
+            { "hue": "#0088ff" }
+        ]
+    }
+    ]
+
+    function initialize() {
+        var mapOptions = {
+            center: center, 
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: styleArray,
+            disableDefaultUI: true,
+            mapTypeControl: false,
+            streetViewControl: false,
+            panControl: true,
+            panControlOptions: {
+                position: google.maps.ControlPosition.TOP_LEFT
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.SMALL,
+                position: google.maps.ControlPosition.TOP_LEFT
+            }
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-container"), mapOptions);
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+{% endblock %}
+</html>

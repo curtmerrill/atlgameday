@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block body %}    
+    <h1>Is there a game today? {% if games|length > 0 %}Yes{% else %}No{% endif %}.</h1>
+    {% for g in games %}
+	<div class="game">
+		<div class="game-time">{{ g.time|time:"g:i a" }}</div>
+        <div class="game-deets">{{ g.name }}<br /><span>@ {{ g.location }}</span></div>
+	</div>
+	{% endfor %}
+
+	<div class="about-link"><a href="/about">About</a></div>
+{% endblock %}

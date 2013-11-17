@@ -1,0 +1,20 @@
+$font-face: "museo-sans-condensed", Helvetica, sans-serif;
+
+@mixin bold-italic() {
+	font-weight: 900;
+	font-style: italic;
+}
+
+@mixin normal-face() {
+	font-weight: 300;
+	font-style: normal;
+}
+
+html, body {
+	font-family: $font-face;
+	font-size: 100%;
+}
+
+h1 {
+	@include bold-italic;
+}
