@@ -14,8 +14,12 @@ framework.
 
 """
 import os
+import site
 from os.path import abspath, dirname
 from sys import path
+
+VIRTUAL_ENV_DIR = "/home/curtmerrill/.envs/gameday"
+site.addsitedir("%s/local/lib/python2.7/site-packages" % VIRTUAL_ENV_DIR)
 
 SITE_ROOT = dirname(dirname(abspath(__file__)))
 path.append(SITE_ROOT)
@@ -25,6 +29,14 @@ path.append(SITE_ROOT)
 # mod_wsgi daemon mode with each site in its own daemon process, or use
 # os.environ["DJANGO_SETTINGS_MODULE"] = "gameday.settings.production"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gameday.settings.production")
+
+os.environ.setdefault("DJANGO_SECRET_KEY", "")
+os.environ.setdefault("DB_HOST", "")
+os.environ.setdefault("DB_PASS", "")
+
+activate_env="%s/bin/activate_this.py" % VIRTUAL_ENV_DIR
+execfile(activate_env, dict(__file__=activate_env))
+
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION

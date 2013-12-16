@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 
 	{% block headerjs %}{% endblock %}
 
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
 </head>
 <body>
 	<div id="map-container"></div>
