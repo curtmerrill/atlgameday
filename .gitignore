@@ -3,3 +3,4 @@
 .sass-cache
 .vagrant
 assets/
+wsgi.py
