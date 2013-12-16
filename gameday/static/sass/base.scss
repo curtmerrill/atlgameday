@@ -40,10 +40,10 @@ body {
     background: #ccc;
 	overflow-y: scroll;
 	@media screen and (max-width: 799px) {
-	    bottom: 0;
+	    top: 60%;
 	    left: 0;
 	    width: 100%;
-		max-height: 50%;
+		min-height: 40%;
 		box-shadow: 0 0 5px 0 #666;
 	}
 	@media screen and (min-width: 800px) {
