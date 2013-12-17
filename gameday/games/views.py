@@ -1,4 +1,5 @@
 from django.views.generic import ListView
+
 from games.models import Game
 
 from datetime import date
