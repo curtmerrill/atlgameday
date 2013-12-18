@@ -73,3 +73,7 @@ body {
     font-weight: 300;
     font-style: normal;
     font-size: 90.9%; }
+
+.ad-container {
+  text-align: center;
+  margin-top: 1em; }
