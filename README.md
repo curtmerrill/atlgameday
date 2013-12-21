@@ -8,10 +8,6 @@ I know what you're thinking: "Is a PostgreSQL database and full Django framework
 
 The answer is no. It's definitely overkill. But I wanted to learn to create and deploy a site with Django and it seemed a good idea to start simple.
 
-## Overview
-
-
-
 ## Authors
 
 Curt Merrill, curt@curtmerrill.com
