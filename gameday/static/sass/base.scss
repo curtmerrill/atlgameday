@@ -59,26 +59,15 @@ body {
 	margin-bottom: 1em;
 }
 
-.game-time, .game-deets {
-	vertical-align: top;
-	display: inline-block;
-	@include no-margin;
-}
-
-.game-time {
-	width: 3.6em;
-	position: relative;
-	padding-top: .1em;
+.game-name {
+    @include bold-italic;
+    font-size: 110%;
 }
 
 .game-deets {
-	@include bold-italic;
-	font-size: 110%;
-	span {
-		color: $lighter-color;
-		@include normal-face;
-		font-size: 90.9%;
-	}
+	font-size: 100%;
+	color: $lighter-color;
+	@include normal-face;
 }
 
 .ad-container {

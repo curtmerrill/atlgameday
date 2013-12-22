@@ -53,26 +53,16 @@ body {
 .game {
   margin-bottom: 1em; }
 
-.game-time, .game-deets {
-  vertical-align: top;
-  display: inline-block;
-  margin: 0;
-  padding: 0; }
-
-.game-time {
-  width: 3.6em;
-  position: relative;
-  padding-top: .1em; }
-
-.game-deets {
+.game-name {
   font-weight: 900;
   font-style: italic;
   font-size: 110%; }
-  .game-deets span {
-    color: #666666;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 90.9%; }
+
+.game-deets {
+  font-size: 100%;
+  color: #666666;
+  font-weight: 300;
+  font-style: normal; }
 
 .ad-container {
   text-align: center;
