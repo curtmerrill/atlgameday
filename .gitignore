@@ -5,3 +5,4 @@
 assets/
 wsgi.py
 *.swp
+*.csv
