@@ -1,4 +1,5 @@
 from os.path import join, normpath
+from os import environ
 from .base import *
 
 DEBUG = False
@@ -23,3 +24,9 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+EMAIL_HOST = environ.get('MAIL_HOST')
+EMAIL_PORT = environ.get('MAIL_PORT')
+EMAIL_HOST_USER = environ.get('MAIL_USER')
+EMAIL_HOST_PASSWORD = environ.get('MAIL_PASS')
+EMAIL_USE_TLS = True
