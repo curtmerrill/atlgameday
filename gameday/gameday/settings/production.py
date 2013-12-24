@@ -25,6 +25,12 @@ CACHES = {
     }
 }
 
+MIDDLEWARE_CLASSES = ('django.middleware.cache.UpdateCacheMiddleware',) + MIDDLEWARE_CLASSES + ('django.middleware.cache.FetchFromCacheMiddleware',)
+
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 60*30
+CACHE_MIDDLEWARE_KEY_PREFIX = 'gameday'
+
 EMAIL_HOST = environ.get('MAIL_HOST')
 EMAIL_PORT = environ.get('MAIL_PORT')
 EMAIL_HOST_USER = environ.get('MAIL_USER')
